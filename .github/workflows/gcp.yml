@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: python-image-from-github-actions
-      PROJECT_ID: devops-projects-321
+      PROJECT_ID: durable-trainer-372420/devops-projects-321
 
     steps:
     - name: Checkout
@@ -32,7 +32,7 @@ jobs:
       env:
         GIT_TAG: v0.0.1
       run: |-
-        docker tag $IMAGE_NAME:latest gcr.io/durable-trainer-372420/$PROJECT_ID/$IMAGE_NAME:latest
-        docker tag $IMAGE_NAME:latest gcr.io/durable-trainer-372420/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
-        docker push gcr.io/durable-trainer-372420/$PROJECT_ID/$IMAGE_NAME:latest
-        docker push gcr.io/durable-trainer-372420/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
+        docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
+        docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
+        docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
+        docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
