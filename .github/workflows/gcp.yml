@@ -22,7 +22,7 @@ jobs:
         export_default_credentials: true
 
     - name: Build Docker Image
-      run: docker build .
+      run: docker build -t $IMAGE_NAME:latest .
 
     - name: Configure Docker Client
       run: |-
@@ -30,4 +30,4 @@ jobs:
 
     - name: Push Docker Image to Container Registry (GCR)
       run: |-
-        docker push gcr.io/durable-trainer-372420/$PROJECT_ID
+        docker push gcr.io/durable-trainer-372420/$PROJECT_ID/$IMAGE_NAME:latest
