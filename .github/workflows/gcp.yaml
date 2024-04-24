@@ -17,9 +17,7 @@ jobs:
 
     - uses: google-github-actions/auth@v2
       with:
-        service_account_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
-        project_id: ${{ env.PROJECT_ID }}
-        export_default_credentials: true
+        credentials_json: ${{ secrets.SERVICE_ACCOUNT_KEY }}
 
     - name: Build Docker Image
       run: docker build -t gcr.io/durable-trainer-372420/$PROJECT_ID .
